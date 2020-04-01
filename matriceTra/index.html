@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css" media="screen">
+    <style media="screen">
+      button{
+        width: 100%;
+      }
+      div{
+        padding: 3%;
+        margin: 1px;
+        text-align: center;
+      }
+    </style>
+<script type="text/javascript">
+var rig = col = rig2 = col2 = x = 0;
+$(document).ready(function(){
+
+$("#matrice2").hide();
+$("#matrice3").hide();
+
+$("#bot1").on("click",function() {
+  rig = $("#rig1").val();
+  col = $("#col1").val();
+if(rig == "" && col == ""){
+  $("#rig1").addClass("is-invalid");
+  $("#col1").addClass("is-invalid");
+}
+else if (rig == "") {
+  $("#rig1").addClass("is-invalid");
+  $("#col1").addClass("is-valid");
+}
+else if (col == "") {
+  $("#rig1").addClass("is-valid");
+  $("#col1").addClass("is-invalid");
+}
+else{
+  $("#rig1").addClass("is-valid");
+  $('#rig1').removeClass('is-invalid');
+  $("#col1").addClass("is-valid");
+  $('#col1').removeClass('is-invalid');
+
+  $("#col1").attr("disabled",true);
+  $("#rig1").attr("disabled",true);
+  $("#bot1").attr("disabled",true);
+        if (rig==col) {
+          x=1;
+          $("#matrice3").show(1000);
+        }
+        else{
+          x=0;
+          $("#rig2").val(col);
+          $("#matrice2").show(1000);
+        }
+}
+});
+
+
+  $("#bot2").on("click",function() {
+    rig2 = $("#rig2").val();
+    col2 = $("#col2").val();
+if(col2 == ""){
+  $("#col2").addClass("is-invalid");
+}
+else{
+    $("#col2").addClass("is-valid");
+    $('#col2').removeClass('is-invalid');
+    $("#matrice3").show(1000);
+    $("#bot1").attr("disabled",true);
+    $("#bot2").attr("disabled",true);
+    $("#rig1").attr("disabled",true);
+    $("#col1").attr("disabled",true);
+    $("#col2").attr("disabled",true);
+    $("#bot3").attr("disabled",false);
+}
+});
+
+});
+
+function genaraMatrice3(){
+  var str = str2 = str3 = "";
+  var i,j,x;
+//console.log(rig==col && col==col2 &&rig2==col2);
+if(rig==col){
+     var value = "quadrato";
+
+    $.post("funzioni.php",{
+      value:value,
+      rig: rig,
+      col, col
+    },function(data){
+      console.log(JSON.parse(data));
+      var arr1=JSON.parse(data);
+      str = str2 = "<table class='table'>";
+
+      for (x = 0; x < arr1.length; x++) {
+        if(x==0){
+          for(i=0; i<arr1[x].length; i++){
+            str += "<tr>";
+            for(j=0; j<arr1[x][i].length; j++){
+              str += "<td>"+arr1[x][i][j]+"</td>";
+            }
+            str += "</tr>";
+          }
+          str += "</table>";
+        }
+
+        if(x==1){
+          for(i=0; i<arr1[x].length; i++){
+            str2 += "<tr>";
+            for(j=0; j<arr1[x][i].length; j++){
+              str2 += "<td>"+arr1[x][i][j]+"</td>";
+            }
+            str2 += "</tr>";
+          }
+          str2 += "</table>";
+        }
+      }
+      document.getElementById("mat1").innerHTML=str;
+      document.getElementById("mat3").innerHTML=str2;
+    });
+}
+
+else{
+  var value="rettangolo";
+
+  $.post("funzioni.php",{
+    value:value,
+    rig:rig,
+    col:col,
+    rig2:rig2,
+    col2:col2
+  },function (data) {
+          var arr1=JSON.parse(data);
+str = str2 = str3 = "<table class='table'>";
+
+      for (x = 0; x < arr1.length; x++) {
+        if(x==0){
+          for(i=0; i<arr1[x].length; i++){
+            str += "<tr>";
+            for(j=0; j<arr1[x][i].length; j++){
+              str += "<td>"+arr1[x][i][j]+"</td>";
+            }
+            str += "</tr>";
+          }
+          str += "</table>";
+        }
+
+        if(x==1){
+          for(i=0; i<arr1[x].length; i++){
+            str2 += "<tr>";
+            for(j=0; j<arr1[x][i].length; j++){
+              str2 += "<td>"+arr1[x][i][j]+"</td>";
+            }
+            str2 += "</tr>";
+          }
+          str2 += "</table>";
+        }
+
+        if(x==2){
+          for(i=0; i<arr1[x].length; i++){
+            str3 += "<tr>";
+            for(j=0; j<arr1[x][i].length; j++){
+              str3 += "<td>"+arr1[x][i][j]+"</td>";
+            }
+            str3 += "</tr>";
+          }
+          str3 += "</table>";
+        }
+      }
+          console.log(arr1);
+
+            document.getElementById("mat1").innerHTML=str;
+            document.getElementById("mat2").innerHTML=str2;
+            document.getElementById("mat3").innerHTML=str3;
+});
+}
+
+}
+
+    </script>
+    <style media="screen">
+      input{
+        width:50px;
+        height:30px;
+      }
+    </style>
+  </head>
+  <body>
+  <div>
+    <h1>MATRICI RETTANGOLARI E QUADRATI</h1>
+  </div>
+    <div class="row">
+      <div id="matrice1" class="col border border-primary rounded-bottom">
+        <h2>1° Matrice</h2>
+        Righe : <input class="form-control rounded-pill" type="number" id="rig1" min="2" placeholder="Min è 2">
+        colonne : <input class="form-control rounded-pill" type="number" id="col1" min="2" placeholder="Min è 2">
+        <button type="button" class="btn btn-xl bg-info rounded-pill mt-1" id="bot1">Matrice 1</button><br>
+        <div id="mat1" class="container"></div>
+      </div>
+      <div id="matrice2" class="col border border-primary rounded-bottom">
+        <h2>2° Matrice</h2>
+        Righe : <input class="form-control rounded-pill" type="number" id="rig2" min="2" placeholder="Viene generata da sola" disabled>
+        colonne : <input class="form-control rounded-pill" type="number" id="col2" min="2" placeholder="Min è 2">
+
+        <button type="button" class="btn btn-xl bg-info rounded-pill mt-1" id="bot2">Matrice 2</button>
+        <div id="mat2" class="container"></div>
+      </div>
+    </div>
+    <div id="matrice3" class="container border border border-primary rounded-bottom">
+      <h2>Matrice Finale</h2>
+      <button type="button" class="btn btn-xl bg-info rounded-pill mt-1" id="bot3" onclick="genaraMatrice3()">GENER I MATRICI</button>
+        <div id="mat3" class="container"></div>
+      <button type="button" class="btn btn-xl bg-danger rounded-pill mt-1" id="bot3" onclick="window.location.reload();">reset</button>
+    </div>
+  </body>
+</html>

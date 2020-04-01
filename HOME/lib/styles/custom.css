@@ -1,0 +1,236 @@
+@font-face {
+    font-family: "My Custom Font";
+    src: url(http://www.example.org/mycustomfont.ttf) format("truetype");
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    height: 8%;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+b{
+    color: yellow;
+}
+
+/* preloader */
+.loader::before{
+    z-index: 7;
+    position: fixed;
+    content: '';
+    height: 50px;
+    width: 50px;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    border-bottom: 3px solid white;
+    border-top: 3px solid white;
+    border-radius: 50px;
+    animation: load 4s linear infinite;
+}
+
+.loader.complete::before{
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+}
+
+.loader2::before{
+    z-index: 7;
+    position: fixed;
+    content: '';
+    height: 150px;
+    width: 150px;
+    top: calc(50% - 75px);
+    left: calc(50% - 75px);
+    border-bottom: 3px solid white;
+    border-top: 3px solid white;
+    border-radius: 100px;
+    animation: load2 4s linear infinite;
+}
+
+.loader2.complete::before{
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+}
+
+.loader::after{
+    z-index: 6;
+    position: fixed;
+    content: '';
+    height: 100px;
+    width: 100px;
+    top:calc(50% - 50px);
+    left:calc(50% - 50px);
+    border-bottom: 3px solid white;
+    border-top: 3px solid white;
+    border-radius: 50px;
+    animation: load 4s linear infinite;
+}
+
+.loader.complete::after{
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+}
+
+.loader2::after{
+    z-index: 6;
+    position: fixed;
+    content: '';
+    height: 75px;
+    width: 75px;
+    top:calc(50% - 37.5px);
+    left:calc(50% - 37.5px);
+    border-bottom: 3px solid white;
+    border-top: 3px solid white;
+    border-radius: 50px;
+    animation: load2 4s linear infinite;
+}
+
+.loader2.complete::after{
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+}
+
+@keyframes load{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(90deg) scale(1.5, 1.5);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(270deg) scale(1.5, 1.5);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes load2{
+    0%{
+        transform: rotate(0deg) scale(1.5, 1.5);
+    }
+    25%{
+        transform: rotate(-90deg);
+    }
+    50%{
+        transform: rotate(-180deg) scale(1.5, 1.5);
+    }
+    75%{
+        transform: rotate(-270deg);
+    }
+    100%{
+        transform: rotate(-360deg) scale(1.5, 1.5);
+    }
+}
+
+.preloader::before{
+    z-index: 5;  
+    content: '';
+    position: fixed;
+    left:0;
+    height: 100%;
+    width: 50%;
+    background-color:black;
+    transition: 1s;
+}
+
+.preloader.complete::before{
+    z-index: 5;  
+    left:-50%;
+}
+
+.preloader::after{
+    z-index: 5;  
+    content: '';
+    position: fixed;
+    right:0;
+    height: 100%;
+    width: 50%;
+    background-color:rgb(7, 171, 221);
+    transition: 1s;
+}
+
+.preloader.complete::after{
+    z-index: 5;  
+    right:-50%;
+}
+/* end preloader */
+
+.carousel:before
+{
+  font-family: 'Satisfy', cursive;
+  font-size: 300%;
+  font-weight: bold;
+  content: 'WECode';
+  position: absolute;
+  z-index: 1;
+  top: 10%;
+  left: 0%;
+  padding: 0 10px;
+  color: var(--light);
+}
+
+.body {
+    font-family: 'Michroma', cursive;
+    color: aliceblue;
+    margin-bottom: 10%;
+}
+
+#carouselExampleIndicators{
+    z-index: 4;
+}
+
+.navbar{
+    z-index: 4;
+}
+
+.nav-link:hover{
+    cursor: pointer;
+}
+
+.card-header:hover{
+    cursor: pointer;
+}
+
+.menu {
+    width: auto;
+    font-family: 'Satisfy', cursive;
+    font-size: 120%;
+}
+
+.description{
+    font-family: 'Michroma', cursive;
+    font-size: 120%;
+}
+
+i:hover{
+    background-color: gray;
+}
+
+a{
+    color: blue;
+}
+
+a:hover{
+    color: blueviolet;
+}

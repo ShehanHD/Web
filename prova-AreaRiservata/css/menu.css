@@ -1,0 +1,28 @@
+
+.overlay {
+text-align:center;
+height: 80%;
+width: 0;
+position: fixed;
+top: 10%;
+left: 0%;
+background-color: rgba(60,60,200, 0.9);
+overflow-x: hidden;
+transition: 0.3s;
+}
+
+.overlay-content {
+color:white;
+position: relative;
+top: 25%;
+width: 100%;
+text-align: center;
+margin-top: 30px;
+}
+
+.overlay .closebtn {
+position: absolute;
+top: 5opx;
+right: 45px;
+font-size: 60px;
+}
