@@ -1,0 +1,133 @@
+
+@font-face {
+font-family: "My Custom Font";
+src: url(http://www.example.org/mycustomfont.ttf) format("truetype");
+}
+h1.customfont {
+font-family: "Courier New", Courier, monospace;
+}
+
+.menu{
+  z-index: 1;
+}
+
+.nuovi{overflow: hidden;}
+.nuovi:before
+{
+  font-family: "Courier New", Courier, monospace;
+  font-size: 129%;
+  font-weight: bold;
+  content: ' nuovi';
+  position: absolute;
+  width: 200px;
+  background-color: #4d4;
+  z-index: 0;
+  height: 30px;
+  left: -70px;
+  transform: rotate(-40deg);
+  top: 13px;
+  padding: 0 10px;
+  color: var(--light);
+}
+
+.overlay {
+z-index: 2;
+text-align:center;
+height: 60%;
+width: 0;
+position: fixed;
+margin-left: 15%;
+top: 15%;
+left: 0%;
+background-color: rgba(0, 131, 220, 0.83);
+overflow-x: hidden;
+transition: 0.5s;
+border-radius: 30px;
+box-shadow: 10px 15px;
+}
+
+.overlay-content {
+color:white;
+position: relative;
+top: 20%;
+width: 100%;
+text-align: center;
+margin-top: 10px;
+}
+
+.overlay .closebtn {
+color:blue;
+position: absolute;
+top: 5%;
+right: 45px;
+font-size: 60px;
+}
+
+.closebtn {
+  transition: width 1s, height 1s, transform 1s;
+}
+.closebtn:hover {
+  cursor: pointer;
+  transform:scale(1.5,1.5);
+}
+.card {
+  border-radius: 30px;
+}
+.card-header {
+  border-radius: 30px;
+}
+.btn{
+  transition: width 1s, height 1s, transform 1s;
+  box-shadow: 3px 4px;
+  width: inherit;
+}
+
+.btn:hover{
+  transform:scale(1.05,1.05);
+  font-weight: bold;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  box-shadow: 6px 8px;
+}
+
+span{
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-weight: bold;
+  font-size: 110%;
+}
+
+.benvenuti{
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-weight: bold;
+  font-size: 120%;
+  border-radius: 10px;
+  background-color: #468;
+}
+
+/*codice css generale per il div #div-id */
+#div-id {
+  margin:10px auto;
+  width:960px;
+  height:auto;
+  background: #333; }
+  
+  /*codice css specifico per chrome e safari */
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+  #div-id { margin-top: 11px; }
+  }
+
+  /*
+  .col-sm-3.mt-2.ml-4.border.border-dark.rounded:before {
+    content: :'';
+    content: ' nuovi';
+    position: absolute;
+    width: 200px;
+    background-color: #f00;
+    z-index: 2;
+    height: 30px;
+    left: -70px;
+    transform: rotate(-40deg);
+    top: 13px;
+    padding: 0 10px;
+    color: var(--light);
+  }
+   */

@@ -1,0 +1,5 @@
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^iltuodominio\.it [NC]
+
+RewriteRule (.*) http://www.iltuodominio.it/$1 [R=301,L]

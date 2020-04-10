@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>stack</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css" media="screen">
+    <style media="screen">
+      td{
+        border: 1px solid black;
+        height: 40px;
+        width: 60%;
+      }
+      .mes{
+        width:100px;
+        border: none;
+      }
+      button{
+        width:50%;
+      }
+      div{
+        border: 1px solid black;
+        border-radius: 20px;
+                padding: 10px;
+      }
+    </style>
+    <script type="text/javascript">
+    var array = [];
+    var indice = 0;
+    var color = "";
+
+      function push() {
+        if(indice==0){
+          indice++;
+        }
+        else if(indice<5){
+          (indice++)+1;
+        }
+        else{
+          alert("array piena");
+        }
+        if((indice-1)>=4){
+          color="bg-danger"
+        }
+        else if ((indice-1)<4 && indice>1) {
+          color = "bg-warning";
+        }
+        else {
+          color = "bg-success";
+        }
+        console.log(indice);
+        document.getElementById("mes"+indice+"").innerHTML = "<h3><-- INDICE</h3>";
+        document.getElementById("mes"+(indice-1)+"").innerHTML = "";
+        $('#cell'+(indice-1)+'').addClass(color);
+        $('#cell'+(indice-1)+'').removeClass('bg-white');
+      }
+
+      function pop() {
+        if(indice==5){
+          indice--;
+        }
+        else if(indice>0){
+          (indice--)-1;
+        }
+        else{
+          alert("array vuota");
+        }
+        console.log(indice);
+        $('#cell'+(indice)+'').addClass('bg-white');
+        document.getElementById("mes"+indice+"").innerHTML = "<h3><-- INDICE</h3>";
+        document.getElementById("mes"+(indice+1)+"").innerHTML = "";
+      }
+    </script>
+  </head>
+  <body>
+<div class="container text-center mb-3 mt-3">
+  <h1>STACK</h1>
+    <button class="btn bg-info rounded-pill mt-2 mb-2"type="button" onclick="push()">PUSH</button>
+    <button class="btn bg-info rounded-pill mb-2"type="button" onclick="pop()">POP</button>
+</div>
+<div class="container text-center">
+    <table class="container text-center">
+      <tr>
+        <td id="cell5"></td>
+        <td class="mes" id="mes5"></td>
+      </tr>
+      <tr>
+        <td id="cell4"></td>
+        <td class="mes" id="mes4"></td>
+      </tr>
+      <tr>
+        <td id="cell3"></td>
+        <td class="mes" id="mes3"></td>
+      </tr>
+      <tr>
+        <td id="cell2"></td>
+        <td class="mes" id="mes2"></td>
+      </tr>
+      <tr>
+        <td id="cell1"></td>
+        <td class="mes" id="mes1"></td>
+      </tr>
+      <tr>
+        <td id="cell0"></td>
+        <td class="mes" id="mes0"></td>
+      </tr>
+    </table>
+
+</div>
+  </body>
+</html>

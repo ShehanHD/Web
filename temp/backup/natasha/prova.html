@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      table,tr{
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align:center;
+      }
+      td{
+        width:30px;
+        height:20px
+      }
+      div{
+        padding:10px
+      }
+    </style>
+    <script>
+      function f1(){
+      var str="";
+      var n = document.getElementById("num").value;
+
+      str += "<table>"
+      for(var i=1; i<=10; i++){
+        str += "<tr><td>" + n + "</td><td> * </td><td>" + i + "</td><td>=</td><td>" + i*n + "</td></tr>";
+      }
+      str += "</table>";
+      document.getElementById("demo").innerHTML = str;
+    }
+    </script>
+  </head>
+  <body>
+    <H3>Multiplication Table </H3>
+  <input type="number" id="num">
+  <button type="button" onclick="f1()">click</button>
+
+  <div id="demo"></div>
+
+  </body>
+</html>

@@ -1,0 +1,91 @@
+#table, th, td {
+  border: 1px solid black;
+	width: 20%;
+	height: 5%;
+	text-align: center;
+}
+#div{
+		padding:2%;
+		border:1px solid black;
+		overflow:auto;
+}
+#div1{
+		padding:1%;
+		width:40%;
+		height:75%;
+		float:left;
+		border:1px solid black;
+		margin:1px;
+		overflow:auto;
+
+}
+#div2{
+		padding:1%;
+		width:55%;
+		height:75%;
+		float:left;
+		margin:1px;
+		border:1px solid black;
+		overflow:auto;
+
+}
+#insvis{
+  height:10%;
+  width:100%;
+  margin-bottom: 2%;
+  border-radius: 3%;
+  outline: none;
+  background-color:#6688aa;
+  box-shadow: 5px 10px #888888;
+  cursor: pointer;
+  opacity: :.7;
+}
+#insvis:hover{
+  background-color:#7799bb;
+}
+#insvis:active{
+  box-shadow: 0 5px #666;
+  transform: translateY(3%);
+}
+#bot_agg{
+		height:5%;
+		width:20%;
+}
+#add{
+		height:5%;
+		width:20%;;
+}
+#Ins{
+		background-color:#fff;
+		border:1px solid black;
+		display:none;
+		width:90%;
+		height: 70%;
+		padding:2%;
+		margin:1%;
+		overflow:auto;
+		text-align:center;
+}
+#vis{
+		background-color:#fff;
+		border:1px solid black;
+		display:none;
+		margin:1%;
+		padding:2%;
+		width:90%;
+		height:70%;
+		overflow:auto;
+		text-align:center;
+}
+select{
+		height:10%;
+		width:30%;
+}
+#date_Ins{
+		height:10%;
+		width:30%;
+}
+#bot{
+		height:10%;
+		width:30%;
+}

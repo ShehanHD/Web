@@ -1,0 +1,95 @@
+Common name,Latin name,Code,Category,Height (m),Lcode,Tcode,Dcode,Likes,Tolerates,Dislikes,Evergreen,Notes
+Alder,Alnus glutinosa,LT,,25,,W,,,,,N,
+Silver birch,Betula pendula,LT,,25,,,,,,,N,attractive white bark
+Hornbeam,Carpinus betulus,LT,,25,,,,,,,N,good for hedging
+Beech,Fagus sylvatica,LT,,25,,,,,,,N,good for hedging and chalky soils
+Ash,Fraxinus excelsior,LT,,30,K,,A,,,,N,seeds freely
+Holly,Ilex aquifolium,LT,,25,,,,,,,Y,attractive berries on female forms
+Scots pine,Pinus sylvestris,LT,,30,,,,,,,Y,good specimen tree
+black poplar,Populus nigra?subsp.?betulifolia,LT,,35,,,,,,,N,pollution-tolerant
+Sessile oak,Quercus petraea,LT,,30,L,,,,,,N,good specimen tree
+English oak,Quercus robur,LT,,35,,L,,,,,N,good specimen tree
+White willow,Salix alba,LT,,25,,,,,,,N,very fast-growing
+Crack willow,Salix fragilis,LT,,25,,,,,,,N,coarse tree for damp areas
+Small-leaved lime,Tilia cordata?,LT,,25,,,,,,,N,prefers chalky soil
+Large-leaved lime,Tilia platyphyllos?,LT,,30,,,,,,,N,prefers chalky soil
+Wych elm,Ulmus glabra?,LT,,35,,,,,,,N,susceptible to Dutch elm disease
+Small-leaved elm,Ulmus minor?,LT,,30,,,,,,,N,susceptible to Dutch elm disease
+Plot's elm,Ulmus plotii?,LT,,30,,,,,,,N,susceptible to Dutch elm disease
+English elm,Ulmus procera?,LT,,40,,,,,,,N,susceptible to Dutch elm disease
+Downy birch,Betula pubescens?,MT,,20,A,S,,,,,N,
+Hawthorn,Crataegus monogyna?,MT,,10,,,,,,,N,attractive berries
+Aspen,Populus tremula?,MT,,20,,,,,,,N,tolerant of most soils
+Wild cherry,Prunus avium?,MT,,20,,,,,,,N,attractive flowers and fruits
+Bird cherry,Prunus padus?,MT,,15,,,,,,,N,fragrant flowers
+Goat willow,Salix caprea?,MT,,10,,,,,,,N,yellow catkins on male trees
+Bay willow,Salix pentandra?,MT,,10,,,,,,,N,showy catkins on male trees
+Almond willow,Salix triandra?,MT,,10,,,,,,,N,long catkins on male trees
+Whitebeam,Sorbus aria?,MT,,20,K,,,,,,N,attractive berries
+Rowan,Sorbus aucuparia?,MT,,15,,,,,,,N,attractive berries and autumn foliage
+Rowan,Sorbus bristoliensis: 10m,MT,,10,,,,,,,N,orange fruits
+Rowan,Sorbus devoniensis: 15m,MT,,15,,,,,,,N,Medium-sized brown berries
+Rowan,Sorbus domestica?,MT,,20,A,P,,,,,N,
+Rowan,Sorbus subcuneata: ,MT,,10,,,,,,,N,brown berries
+Rowan,Sorbus torminalis?,MT,,20,,,,,,,N,attractive autumn colour
+Yew,Taxus baccata?,MT,,15,,P,,,,,Y,
+Field maple,Acer campestre?,ST,,8,,,,,,,N,good autumn colour
+Strawberry tree,Arbutus unedo?,ST,,8,,,,,,,Y,"Attractive flowers, fruit and bark"
+Box,Buxus sempervirens?,ST,,5,K,,,,,,Y,prefers partial shade
+Hazel,Corylus avellana?,ST,,5,K,,,,,,N,
+Midland hawthorn,Crataegus laevigata?,ST,,8,,,,,,,N,attractive berries
+Crab apple,Malus sylvestris?,ST,,9,,,,,,,N,attractive fruit
+Blackthorn,Prunus spinosa?,ST,,5,,,,,,,N,small purple fruit
+Plymouth pear,Pyrus cordata?,ST,,8,,,,,,,N,small fruits
+Alder buckthorn,Rhamnus frangula?,ST,,5,,,,,,,N,attractive autumn colour and fruit
+Grey willow,Salix cinerea?,ST,,6,,,,,,,N,silky male catkins
+Osier,Salix viminalis?,ST,,6,,,,,,,N,attractive male catkins
+Elder,Sambucus nigra?,ST,,6,,,,,,,N,attractive flowers and fruit
+Arran whitebeam,Sorbus arranensis?,ST,,7.5,,,,,,,N,small fruits & narrow leaves
+Whitebeam,Sorbus eminens,ST,,6,,,,,,,N,large red fruit
+Whitebeam,Sorbus hibernica ,ST,,6,,,,,,,N,small pink/red fruit
+Whitebeam,Sorbus lancastriensis ,ST,,5,,,,,,,N,large crimson fruit
+Whitebeam,Sorbus porrigentiformis ,ST,,5,,,,,,,N,large leaves & small fruits
+Whitebeam,Sorbus pseudofennica ,ST,,7,,,,,,,N,elongated red berries
+Whitebeam,Sorbus rupicola ,ST,,6,,,,,,,N, elongated leaves & deep red fruit
+Whitebeam,Sorbus vexans ,ST,,6,,,K,,,,N,scarlet fruit
+Whitebeam,Sorbus wilmottiana ,ST,,6,,,,,,,N,small leaves and fruit
+Dogwood,Cornus sanguinea?,LS,,3,,,,,,,N,attractive winter stems
+Spindle,Euonymus europaeus?,LS,,3,K,,,,,,N,attractive fruits
+Sea buckthorn,Hippophae rhamnoides?,LS,,6,,,W,,,,N,female bears fruit
+Juniper,Juniperus communis?,LS,,6,,,,,,,N,grows in any well-drained soil
+Wild privet,Ligustrum vulgare?,LS,,3,,,,,,,N,useful for hedging
+Buckthorn,Rhamnus cathartica?,LS,,6,,,,,,,N,good autumn colour & bears fruit
+Hairy dog rose,Rosa caesia?,LS,,3,,,,,,,N,single pink/white flowers & hips
+Dog rose,Rosa caesia?subsp.?Glauca,LS,,3,,,,,,,N,red stems
+Dog rose,Rosa canina?,LS,,4,,,,,,,N,fragrant flowers and red hips
+Small-flowered sweet briar,Rosa micrantha?,LS,,3.5,,,,,,,N,single flowers and red hips
+Round-leaved dog rose,Rosa obtusifolia ,LS,,3,,,,,,,N,white/pink flowers
+Short-styled field rose,Rosa stylosa?,LS,,3,,,,,,,N,single flowers and red hips
+Harsh downy rose,Rosa tomentosa?,LS,,3,,,,,,,N,fragrant flowers and foliage
+Dark-leaved willow,Salix myrsinifolia?,LS,,4,,W,,,,,N,hairy young stems
+Tea-leaved willow,Salix phylicifolia?,LS,,4,,,,,,,N,glossy dark winter stems
+Purple willow,Salix purpurea?,LS,,5,,,,,,,N,attractive winter stems
+Eared willow,Salix aurita?,LS,,3,A,,,,,,N,red/brown stems
+Welsh whitebeam,Sorbus leptophylla?,LS,,3,,,,,,,N,large scarlet fruit
+Whitebeam,Sorbus leyana:,LS,,3,,,,,,,N,Small leaves and fruit
+Whitebeam,Sorbus minima:,LS,,3,,,,,,,N,Sparse shrub with scarlet fruit
+Wayfaring tree,Viburnum lantana?,LS,,5,,,,,,,N,attractive flowers and fruit
+Guelder rose,Viburnum opulus?,LS,,5,,,,,,,N,attractive fruit and autumn colour
+Broom,Cytisus scoparius?,MS,,1.5,A,P,,,,,N,
+Small-leaved sweet briar,Rosa agrestis?,MS,,2,K,,,,,,N,erect stems
+Field rose,Rosa arvensis?,MS,,2,,,,,,,N,fragrant flowers and red hips
+Soft downy rose,Rosa mollis?,MS,,2.5,,,,,,,N,small hips & pink flowers
+Sweet briar,Rosa rubiginosa?,MS,,2.5,,,,,,,N,red hips
+Sherard's downy rose,Rosa sherardii?,MS,,2,,,,,,,N,clusters of flowers and red hips
+English whitebeam,Sorbus anglica?,MS,,2,,,,,,,N,good autumn colour
+Gorse,Ulex europaeus?,MS,,2.5,P,,,,,,Y,
+Western gorse,Ulex gallii?,MS,,2,A,T,,,,,Y,thrives in sandy acid soil
+Burnet rose,Rosa pimpinellifolia?,SS,,1,,,,,,,N,attractive flowers and hips
+Butcher's broom,Ruscus aculeatus?,SS,,0.75,,,,,,,Y,female plants produce berries
+Dwarf willow,Salix herbacea?,SS,,0.1,,,,,,,N,forms a creeping mat
+Woolly willow,Salix lanata?,SS,,1,,,,,,,N,small alpine species with grey leaves
+Downy willow,Salix lapponum?,SS,,1,,,,,,,N,small dense shrub with grey leaves
+Whortle-leaved willow,Salix myrsinites?,SS,,0.5,,,,,,,N,carpeting species
+Creeping willow,Salix repens?,SS,,0.6,,,,,,,N,attractive male catkins
+Net-leaved willow,Salix reticulata?,SS,,0.8,,,,,,,N,mat-forming species
