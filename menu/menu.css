@@ -1,0 +1,32 @@
+.list{
+    text-align: center;
+    top: 0;
+    left: calc(1% - 15%);
+    background-color: rgb(19, 136, 190);
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+ul li{
+    cursor: pointer;
+    pointer-events: none;
+    list-style: none;
+    height: 54px;
+    line-height: 54px;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+}
+
+.hover-bg{
+    cursor: pointer;
+    pointer-events: none;
+    position: absolute;
+    top: 20px;
+    height: 54px;
+    width: 100%;
+    background-color: rgba(187, 255, 255, 0.5);
+    transition: 0.5s ease-in-out;
+}

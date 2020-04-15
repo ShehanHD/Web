@@ -1,0 +1,28 @@
+.reparto{
+    background-color: green;
+    text-align: center;
+    z-index: 5;
+    position: absolute;
+    top: 26px;
+    right: -75px;
+    width: 100%;
+    padding: 2%;
+    transform: rotate(45deg);
+    border: ridge green 2px;
+}
+
+.card .card-action {
+    padding: 3%;
+}
+
+.closebtn2{
+    cursor: pointer;
+    font-size: 200%;
+    top: 20px;
+    right: 40px;
+    position: absolute;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    background-color: none;
+}

@@ -1,0 +1,37 @@
+CREATE TABLE games(
+    won int NOT NULL,
+    lost int NOT NULL,
+	id_team int,
+ 	id_player int,
+    FOREIGN KEY (id_team) REFERENCES teams(id_team),
+    FOREIGN KEY (id_player) REFERENCES players(id_player)
+);
+CREATE TABLE penalties(
+	id_penalties int not null PRIMARY KEY ,
+	id_player int,
+ 	pdate date not null,
+ 	amount int not null,
+    FOREIGN KEY (id_player) REFERENCES players(id_player)
+);
+
+
+SELECT * FROM players WHERE name LIKE 'B%'
+
+SELECT name, id_league FROM `players` WHERE NOT `id_league` = 8467
+
+SELECT name, initials FROM players WHERE id_player IN (SELECT `id_player` FROM `teams` WHERE 1)
+SELECT name, initials FROM teams, players WHERE teams.id_player=players.id_player
+
+
+SELECT `id_player`, COUNT(`id_player`) FROM `penalties` GROUP BY `id_player` HAVING COUNT(`id_player`) > 1
+
+SELECT `id_player` FROM `penalties` where `amount` >= 250 and `amount` <= 300
+
+
+
+
+
+
+
+
+

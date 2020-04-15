@@ -1,0 +1,32 @@
+.dropdown-my{
+    width: 20% !important;
+}
+
+.navbar-fixed{
+    z-index: 20;
+}
+
+.nav-wrapper{
+    z-index: 20;
+    background-color: rgba(255, 255, 255, 0.747);
+}
+
+.section{
+    padding-top: 4vw;
+    padding-bottom: 4vw;
+}
+
+.tabs .indicator{
+    background-color: rgb(68, 68, 245);
+}
+
+.tabs .tab a:focus, .tabs .tab a:focus.active{
+    background: transparent;
+}
+
+.sidenav-overlay{
+    z-index: 10;
+}
+.side-nav{
+    z-index: 30;
+}
