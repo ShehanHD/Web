@@ -21,13 +21,17 @@
                         </a></li>
                     </ul>
                     <ul id='dropdown1' class='dropdown-content dropdown-my'>
-                        <li><a href="#!">sssssssssssssss</a></li>
+                        <li><a href="" class="selectCat">Achitettura e urbanistica</a></li>
+                        <li><a href="" class="selectCat">Arte</a></li>
+                        <li><a href="" class="selectCat">Classici Greci e Latini</a></li>
+                        <li><a href="" class="selectCat">Cucina e casa</a></li>
+                        <li><a href="" class="selectCat">Diritto</a></li>
+                        <li><a href="" class="selectCat">Economia e management</a></li>
+                        <li><a href="" class="selectCat">Fantascienza e fantasy</a></li>
+                        <li><a href="" class="selectCat">Filosofia</a></li>
+                        <li><a href="" class="selectCat">Fumetti</a></li>
                     </ul>
                     <!-- ------- -->
-
-
-
-
 
 
                     <!-- mobile -->
@@ -52,7 +56,15 @@
                     </ul>
                     <!-- ------- -->
                     <ul id='dropdown2' class='dropdown-content'>
-                        <li><a href="#!">ssssssssssssssss</a></li>
+                        <li><a href="" class="selectCat">Achitettura e urbanistica</a></li>
+                        <li><a href="" class="selectCat">Arte</a></li>
+                        <li><a href="" class="selectCat">Classici Greci e Latini</a></li>
+                        <li><a href="" class="selectCat">Cucina e casa</a></li>
+                        <li><a href="" class="selectCat">Diritto</a></li>
+                        <li><a href="" class="selectCat">Economia e management</a></li>
+                        <li><a href="" class="selectCat">Fantascienza e fantasy</a></li>
+                        <li><a href="" class="selectCat">Filosofia</a></li>
+                        <li><a href="" class="selectCat">Fumetti</a></li>
                     </ul>
                 
                 

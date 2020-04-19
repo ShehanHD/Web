@@ -9,18 +9,18 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-    <link rel="stylesheet" href="./lib/css/main.css">
-    <link rel="stylesheet" href="./lib/css/navBar.css">
-    <link rel="stylesheet" href="./lib/css/bookCard.css">
+    <link rel="stylesheet" href="./public/css/main.css">
+    <link rel="stylesheet" href="./public/css/navBar.css">
+    <link rel="stylesheet" href="./public/css/bookCard.css">
     <title>Document</title>
 </head>
 <body>
     <?php include_once('navBar.php'); ?>
-    <?php include_once('body.php'); ?>
+    <div class="row container" id="books"></div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-    <script src="./lib/js/main.js"></script>  
-    <script src="./lib/js/init_page.js"></script>  
+    <script src="./public/js/main.js"></script>  
+    <script src="./public/js/init_page.js"></script>  
 </body>
 </html>
