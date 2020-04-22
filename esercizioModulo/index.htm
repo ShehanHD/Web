@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        form{
+            padding-top: 10%;
+            width: 30%;
+            margin: auto;
+        }
+        input, button, select {
+            width: 100%;
+            margin: 1%;
+            height: 30px;
+            border-radius: 5px;
+            border: solid gray 2px;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <h2>New Data</h2>
+        <input type="text" id="name" placeholder="Name">
+        <input type="text" id="surname" placeholder="Surname">
+        <input type="email" id="email" placeholder="Email">
+        <span>Sex:</span><br>
+                <input style="width:20%" type="radio" id="male" name="gender" value="male" selected>
+                <label for="male">Male</label>
+                <input style="width:20%" type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+                Education Qualification:
+            <select id="education">
+                <option value="primary_school">Primary School</option>
+                <option value="secondary_school">Secondary School</option>
+                <option value="high_school">High School</option>
+            </select>
+        <input type="password" id="password" placeholder="Password">
+        <button type="submit" id="submit">Submit</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#submit').on('click', function(e){            
+                e.preventDefault();
+
+                let name = $("#name").val();
+                let surname = $("#surname").val();
+                let email = $("#email").val();
+                let sex = $("#male").is(':checked') ? $("#male").val() : $("#female").val();
+                let education = $("#education").val();
+                let password = $("#password").val();
+
+                $.post("modulo.php",{
+                    value: "newData",
+                    name : name,
+                    surname : surname,
+                    email : email,
+                    sex : sex,
+                    education : education,
+                    password : password
+                },function (data) {
+                    if(data == "ok"){
+                        alert("Data has been saved in to a file");
+                    }
+                    else{
+                        alert("Fill out your form");
+                    }
+                })
+            });
+        });
+    </script>
+</body>
+</html>
