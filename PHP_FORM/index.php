@@ -5,6 +5,8 @@
         $val = new Validate($_POST);
 
         $errors = $val->validateForm();
+
+        // print_r($errors);
     }
 
 ?>
@@ -30,15 +32,29 @@
 <body>
     <div style="padding: 5%" class="container">
         <form action="<?php $_SERVER['PHP_SELF'] ?>" method="POST">
-            <div class="input-field col s12 l6">
-            <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($_POST['name']) ?>" class="validate">
+            <div class="input-field">
+            <input type="text" id="name" name="name" value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name']) : '';?>" class="validate">
             <div class="err"><?php echo $errors['name'] ?? '' ?></div>
-            <label for="name">Name</label>
+            <label for="name">Nome</label>
             </div>
-            <div class="input-field col s12">
-            <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($_POST['email']) ?>" class="validate">
+            <div class="input-field">
+            <input type="text" id="surname" name="surname" value="<?php echo isset($_POST['surname']) ? htmlspecialchars($_POST['surname']) : '' ?>" class="validate">
+            <div class="err"><?php echo $errors['surname'] ?? '' ?></div>
+            <label for="surname">Cognome</label>
+            </div>
+            <div class="input-field">
+            <input type="email" id="email" name="email" value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>" class="validate">
             <div class="err"><?php echo $errors['email'] ?? '' ?></div>
             <label for="email" data-error="wrong" data-success="right">Email</label>
+            </div>
+            <div class="input-field">
+            <input type="text" id="pass" name="pass" value="<?php echo isset($_POST['pass']) ? htmlspecialchars($_POST['pass']) : '' ?>" class="validate">
+            <label for="pass">Password</label>
+            </div>
+            <div class="input-field">
+            <input type="text" id="re_pass" name="re_pass" value="<?php echo isset($_POST['re_pass']) ? htmlspecialchars($_POST['re_pass']) : '' ?>" class="validate">
+            <div class="err"><?php echo $errors['pass'] ?? '' ?></div>
+            <label for="re_pass">Repeti Password</label>
             </div>
             <button style="width: 100%" class="btn waves-effect waves-light" type="submit" name="submit">Submit</button>
         </form>
