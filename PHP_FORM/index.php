@@ -5,8 +5,19 @@
         $val = new Validate($_POST);
 
         $errors = $val->validateForm();
+    }
 
-        // print_r($errors);
+    function printTable(){
+        $obj = json_decode($_COOKIE["data"]);
+
+        foreach ($obj as $i) {
+            echo "<tr>";
+            foreach ((array)$i as $x){
+                echo "<td>".$x."</td>";
+            }
+            echo "</tr>";
+        }
+        
     }
 
 ?>
@@ -58,6 +69,29 @@
             </div>
             <button style="width: 100%" class="btn waves-effect waves-light" type="submit" name="submit">Submit</button>
         </form>
+    </div>
+
+    <div style="padding: 5%" class="container">
+        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+            <button style="width: 100%" class="btn indigo waves-effect waves-light" type="submit" name="print">Print</button>
+        </form>
+
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>E-mail</th>
+                <th>Password</th>
+                <th>Re_Password</th>
+            </tr>
+            <?php
+                if (isset($_POST['print'])) {
+                if(isset($_COOKIE["data"])){
+                    printTable();
+                }
+            }            
+            ?>
+        </table>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>

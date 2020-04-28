@@ -21,7 +21,16 @@ class Validate{
         $this->validateEmail();
         $this->validatePassword();
 
-        return $this->errors;
+        if($this->errors){
+            return $this->errors;
+        } 
+        else{
+            $data = isset($_COOKIE["data"]) ? (array)json_decode($_COOKIE["data"]) : [];
+
+            array_push($data, $this->data);
+            
+            setcookie("data", json_encode($data) , time() + (3600), "/");
+        }
     }
 
     private function validateName(){
@@ -31,7 +40,7 @@ class Validate{
             $this->addError("name", "Aggiungi il nome!");
         }
         else{
-            if(!preg_match('/^[a-zA-Z]{2,6}$/', $val)){
+            if(!preg_match('/^[a-zA-Z]+$/', $val)){
                 $this->addError("name", "Deve avere tra 2-6 caratteri e alphanumerici");
             } 
         }
@@ -44,7 +53,7 @@ class Validate{
             $this->addError("surname", "Aggiungi il cognome!");
         }
         else{
-            if(!preg_match('/^[a-zA-Z]{2,6}$/', $val)){
+            if(!preg_match('/^[a-zA-Z]+$/', $val)){
                 $this->addError("surname", "Deve avere tra 2-6 caratteri e alphanumerici");
             } 
         }
@@ -74,7 +83,7 @@ class Validate{
             $this->addError("pass", "Password non sono uguali!");
         }
         else{
-            if(!preg_match('/^[a-zA-Z]{2,6}$/', $pass)){
+            if(!preg_match('/^[a-zA-Z1-9]{2,6}$/', $pass)){
                 $this->addError("pass", "Deve avere tra 2-6 caratteri e alphanumerici");
             } 
         }
