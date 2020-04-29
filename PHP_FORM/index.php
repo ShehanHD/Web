@@ -11,10 +11,13 @@
         $obj = json_decode($_COOKIE["data"]);
 
         foreach ($obj as $i) {
-            echo "<tr>";
-            foreach ((array)$i as $x){
-                echo "<td>".$x."</td>";
-            }
+            
+            echo "<tr class='my' onclick='del(".$i->id.")'>";
+                echo "<td>".$i->name."</td>";
+                echo "<td>".$i->surname."</td>";
+                echo "<td>".$i->email."</td>";
+                echo "<td>".$i->pass."</td>";
+                echo "<td>".$i->re_pass."</td>";
             echo "</tr>";
         }
         
@@ -31,6 +34,7 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    <link rel="stylesheet" href="index.css">
     <title>PHP_FORM</title>
     <style>
         .err{
@@ -76,6 +80,7 @@
             <button style="width: 100%" class="btn indigo waves-effect waves-light" type="submit" name="print">Print</button>
         </form>
 
+        <h5 class="center-align red-text">Per eleminare clicchi sul elemento</h5>
         <table>
             <tr>
                 <th>Nome</th>
@@ -86,14 +91,17 @@
             </tr>
             <?php
                 if (isset($_POST['print'])) {
-                if(isset($_COOKIE["data"])){
-                    printTable();
-                }
-            }            
+                    if(isset($_COOKIE["data"])){
+                        printTable();
+                    }
+                    else{
+                        echo "<th colspan=5 class='center-align'>Non c'è nessun dato</th>";
+                    }
+                }            
             ?>
         </table>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="cookie.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 </body>
 </html>

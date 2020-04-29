@@ -1,12 +1,14 @@
 <?php
 
 class Validate{
-    public $data;
+    public $data = [];
     public $errors = [];
     private $keys = ['name', 'surname', 'email', 'pass', 're_pass'];
 
     public function __construct($form_data) {
-        $this->data = $form_data;
+        $this->data = array('id' => idate("U"));
+
+        $this->data = array_merge($this->data, $form_data);
     }
 
     public function validateForm(){
@@ -25,7 +27,7 @@ class Validate{
             return $this->errors;
         } 
         else{
-            $data = isset($_COOKIE["data"]) ? (array)json_decode($_COOKIE["data"]) : [];
+            $data = isset($_COOKIE["data"]) ? json_decode($_COOKIE["data"]) : [];
 
             array_push($data, $this->data);
             

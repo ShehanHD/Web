@@ -1,0 +1,11 @@
+body{
+    background-color: beige;
+}
+
+tr{
+    margin: 1%;
+}
+.my:hover{
+    border: solid red 1px;
+    box-shadow: 0 0 4px 6px red;
+}
