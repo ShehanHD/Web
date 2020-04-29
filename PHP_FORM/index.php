@@ -1,9 +1,8 @@
 <?php
-    require('./validator.php');
+    require('./validator.php'); 
 
     if (isset($_POST['submit'])) {
         $val = new Validate($_POST);
-
         $errors = $val->validateForm();
     }
 
@@ -11,11 +10,12 @@
         $obj = json_decode($_COOKIE["data"]);
 
         foreach ($obj as $i) {
-            
             echo "<tr class='my' onclick='del(".$i->id.")'>";
                 echo "<td>".$i->name."</td>";
                 echo "<td>".$i->surname."</td>";
                 echo "<td>".$i->email."</td>";
+                echo "<td>".$i->gender."</td>";
+                echo "<td>".$i->country."</td>";
                 echo "<td>".$i->pass."</td>";
                 echo "<td>".$i->re_pass."</td>";
             echo "</tr>";
@@ -57,19 +57,38 @@
             <div class="err"><?php echo $errors['surname'] ?? '' ?></div>
             <label for="surname">Cognome</label>
             </div>
+            <p>
+                <label>
+                    <input name="gender" type="radio" value="male" checked />
+                    <span>Maschio</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input name="gender" type="radio" value="female"/>
+                    <span>Fammina</span>
+                </label>
+            </p>
             <div class="input-field">
-            <input type="email" id="email" name="email" value="<?php echo isset($errors) ? htmlspecialchars($_POST['email']) : '' ?>" class="validate">
-            <div class="err"><?php echo $errors['email'] ?? '' ?></div>
-            <label for="email" data-error="wrong" data-success="right">Email</label>
+                <input type="text" list="country" name="country" id="inCountry" value="<?php echo isset($errors) ? htmlspecialchars($_POST['email']) : '' ?>" class="validate">
+                <div class="err"><?php echo $errors['country'] ?? '' ?></div>
+                <label for="country" data-error="wrong" data-success="right">Paese</label>
+                <datalist id="country">
+                </datalist>
             </div>
             <div class="input-field">
-            <input type="text" id="pass" name="pass" value="<?php echo isset($errors) ? htmlspecialchars($_POST['pass']) : '' ?>" class="validate">
-            <label for="pass">Password</label>
+                <input type="email" id="email" name="email" value="<?php echo isset($errors) ? htmlspecialchars($_POST['email']) : '' ?>" class="validate">
+                <div class="err"><?php echo $errors['email'] ?? '' ?></div>
+                <label for="email" data-error="wrong" data-success="right">Email</label>
             </div>
             <div class="input-field">
-            <input type="text" id="re_pass" name="re_pass" value="<?php echo isset($errors) ? htmlspecialchars($_POST['re_pass']) : '' ?>" class="validate">
-            <div class="err"><?php echo $errors['pass'] ?? '' ?></div>
-            <label for="re_pass">Repeti Password</label>
+                <input type="text" id="pass" name="pass" value="<?php echo isset($errors) ? htmlspecialchars($_POST['pass']) : '' ?>" class="validate">
+                <label for="pass">Password</label>
+            </div>
+            <div class="input-field">
+                <input type="text" id="re_pass" name="re_pass" value="<?php echo isset($errors) ? htmlspecialchars($_POST['re_pass']) : '' ?>" class="validate">
+                <div class="err"><?php echo $errors['pass'] ?? '' ?></div>
+                <label for="re_pass">Repeti Password</label>
             </div>
             <button style="width: 100%" class="btn waves-effect waves-light" type="submit" name="submit">Submit</button>
         </form>
@@ -86,6 +105,8 @@
                 <th>Nome</th>
                 <th>Cognome</th>
                 <th>E-mail</th>
+                <th>Sesso</th>
+                <th>Paese</th>
                 <th>Password</th>
                 <th>Re_Password</th>
             </tr>
@@ -101,7 +122,9 @@
             ?>
         </table>
     </div>
-    <script src="cookie.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script src="cookie.js"></script>
 </body>
 </html>

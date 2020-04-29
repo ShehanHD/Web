@@ -1,3 +1,39 @@
+let country;
+
+$.ajax({
+    method: "GET",
+    url: "./paesi.json",
+})
+    .done(function( data ) {
+        country = data;   
+});
+
+
+document.getElementById("inCountry").addEventListener('input', function(e){
+    const searchString = e.target.value;
+    
+    const test = country.filter(item => {
+        return (
+            item.name.includes(searchString)
+        )
+    });
+
+    
+    let dataList = document.getElementById("country");
+    dataList.innerHTML="";
+    console.log(test);
+    
+    test.forEach(element => {
+        let node = document.createElement("option");
+        let text = document.createTextNode(element.name);
+
+        node.appendChild(text);
+        dataList.appendChild(node);
+    });
+    
+    
+})
+
 const del = (id) => {
     let allcookies  =  decodeURIComponent(document.cookie);
     let str="";

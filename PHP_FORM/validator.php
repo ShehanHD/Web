@@ -1,13 +1,12 @@
 <?php
 
 class Validate{
-    public $data = [];
+    private $data;
     public $errors = [];
-    private $keys = ['name', 'surname', 'email', 'pass', 're_pass'];
+    private $keys = ['name', 'surname', 'email', 'gender', 'country', 'pass', 're_pass'];
 
     public function __construct($form_data) {
         $this->data = array('id' => idate("U"));
-
         $this->data = array_merge($this->data, $form_data);
     }
 
