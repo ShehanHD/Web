@@ -30,8 +30,6 @@ document.getElementById("inCountry").addEventListener('input', function(e){
         node.appendChild(text);
         dataList.appendChild(node);
     });
-    
-    
 })
 
 const del = (id) => {
