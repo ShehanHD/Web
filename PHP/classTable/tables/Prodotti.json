@@ -1,0 +1,6 @@
+{
+    "column":["Prodotto","Prezzo","Quantita"],
+    "row":[
+            ["mela","1", "100"],["pera","2", "344"],["arance","5", "555"]
+        ]
+}
