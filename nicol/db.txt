@@ -1,0 +1,26 @@
+create table utenti(
+    IDU  int(11) primary key AUTO_INCREMENT,
+    Nome varchar(40), 
+    Cognome varchar(40), 
+    DatadiNascita date, 
+    CodiceFiscale varchar(15), 
+    Indirizzo varchar(30), 
+    Cap int(6), 
+    Città varchar(40), 
+    Paese varchar(40), 
+    NumerodiTelefono varchar(11), 
+    Email varchar(40),
+    Username varchar(40), 
+    Password varchar(20));
+
+
+create table offerte(
+    IDO int(11) primary key AUTO_INCREMENT,
+    Tipo varchar(50),
+    Descrizione varchar(200),
+    Prezzo int(10));
+
+create table ordini(
+    IDOR int(11) primary key AUTO_INCREMENT,
+    KsIDO int(11) foreign key KsIDO references offerte(IDO),
+    KsIDU int(11) foreign key KsIDU references utenti(IDu));

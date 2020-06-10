@@ -1,0 +1,56 @@
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+header {
+    background: url('../immagini/primafoto.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 750px;
+}
+
+.sticky {
+    position: sticky;
+    z-index: 50;
+    top: 64px;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+}
+
+.card{
+
+}
+
+.card{
+    height: 385px;
+}
+
+.card .card-image img{
+    height: 200px;
+}
+
+article{
+    border-radius: 40px;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    box-shadow: gray 0 0 20px 0;
+}
+
+.dash{
+    height: 200px !important;
+}

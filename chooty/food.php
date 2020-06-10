@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 if (isset($_REQUEST['req'])) {
     $request = $_REQUEST['req'];
 } else {
@@ -25,6 +25,31 @@ switch ($request) {
         $obj = new Food();
         $obj->delFood($_REQUEST['id']);
         break;
+
+    case 'login':
+        $obj = new Food();
+        $obj->login($_REQUEST);
+        break;
+
+    case 'regis':
+            $obj = new Food();
+            $obj->regis($_REQUEST);
+            break;
+
+    case 'addCart':
+        $obj = new Food();
+        $obj->addCart($_REQUEST['cart']);
+        break;
+        
+    case 'delCart':
+        $obj = new Food();
+        $obj->delCart($_REQUEST['id']);
+        break;
+
+    case 'logout':
+        $obj = new Food();
+        $obj->logout();
+        break;
     default:
         include("./index.php");
         break;
@@ -35,8 +60,7 @@ class Food
 {
     private $connect;
 
-    public function __construct()
-    {
+    public function __construct(){
         $this->connect = new MySQLi("localhost", "root", "")  or die(mysqli_connect_error());
 
         if (!mysqli_select_db($this->connect, 'pizzaria')) {
@@ -61,7 +85,9 @@ class Food
             indirizzo varchar(60) not null,
             citta varchar(50) not null,
             cappa int not null,
-            telefono int not null
+            telefono int not null,
+            mail varchar(60) not null,
+            PASSWORD varchar(50) not null
             );";
             if (!mysqli_query($this->connect, $table1)) {
                 echo " Error creating table regis";
@@ -84,8 +110,7 @@ class Food
         mysqli_close($this->connect);
     }
 
-    public function addFood($foods)
-    {
+    public function addFood($foods){
         $tipo = $foods['tipo'];
         $ingre = $foods['ingre'];
         $prezzo = $foods['prezzo'];
@@ -100,8 +125,7 @@ class Food
         mysqli_close($sql);
     }
 
-    public function editFood($foods)
-    {
+    public function editFood($foods){
 
         $tipo = $foods['tipo'];
         $ingre = $foods['ingre'];
@@ -113,8 +137,7 @@ class Food
         mysqli_close($sql);
     }
 
-    public function read()
-    {
+    public function read(){
         $sql = new Mysqli("localhost", "root", "", "pizzaria");
         $str = "select * from foods";
         $ris=mysqli_query($sql, $str);
@@ -123,6 +146,7 @@ class Food
 
         echo json_encode($row); 
     }
+
     public function delFood($id){
         $sql = new MySQLi("localhost", "root", "", "pizzaria");
         $del="DELETE FROM `foods` WHERE idfood=$id";
@@ -133,5 +157,91 @@ class Food
             echo 0;
         }
         mysqli_close($sql);
+    }
+
+    public function login($user){
+        $mail = $user['mail'];
+        $PASSWORD = $user['PASSWORD'];
+
+        $sql = new Mysqli("localhost", "root", "", "pizzaria");
+        $str = "select mail,PASSWORD,idregis from regis where mail='$mail' and PASSWORD='$PASSWORD' ";
+        $ris=mysqli_query($sql, $str);
+        $row = mysqli_fetch_all($ris);
+        
+        if($row){
+            if($row[0][0] == 'shehani@gmail.com'){
+                $_SESSION["admin"]=$mail;
+                $_SESSION["id"]=$row[0][2];
+                echo 1;
+            }
+            else{
+                $_SESSION["mail"]=$mail;
+                $_SESSION["id"]=$row[0][2];
+                echo 1;
+            }
+        }else{
+            echo 0;
+        }
+    }
+
+    public function regis($user){
+        $nome=$user['nome'];
+        $cognome=$user['cognome'];
+        $indirizzo=$user['indirizzo'];
+        $citta=$user['citta'];
+        $cappa=$user['cappa'];
+        $telefono=$user['telefono'];
+        $mail = $user['mail'];
+        $PASSWORD = $user['PASSWORD'];
+
+        
+        $sql = new MySQLi("localhost", "root", "", "pizzaria");
+        $add = "INSERT INTO `regis`(`nome`, `cognome`, `indirizzo`, `citta`, `cappa`, `telefono`, `mail`, `PASSWORD`) VALUES ('$nome', '$cognome', '$indirizzo', '$citta', '$cappa', '$telefono', '$mail', '$PASSWORD');";
+        
+        if (!mysqli_query($sql,$add)){
+            echo 1;
+        }
+        else{
+            echo 0;
+        }
+        mysqli_close($sql);
+    }
+
+    public function addCart($cart){
+     
+        
+        $tipo=(json_encode($cart[0][1]));
+         $ingre=(json_encode($cart[0][2]));
+        $prezzo=(json_encode($cart[0][3]));
+        $ksregis=$_SESSION['id'];
+        $ksfood=(json_encode($cart[0][0]));
+        print_r($ksfood);
+      
+        $sql = new Mysqli("localhost", "root", "", "pizzaria");
+        $sql->query("INSERT INTO `ordini`( `tipo`, `ingre`, `prezzo`, `ksfood`, `ksregis`) VALUES  
+        ('$tipo','$ingre','$prezzo'  ,$ksfood,$ksregis);");
+       
+      
+      mysqli_close($sql);
+    }
+
+    public function delCart($id){
+        $ksfood=(json_encode($id[0][0]));
+        print_r($ksfood);
+        $sql = new Mysqli("localhost", "root", "", "pizzaria");
+        $sql->query("DELETE FROM `ordini` WHERE 0;");
+    }
+
+    public function logout(){
+        unset($_SESSION['mail']);
+        unset($_SESSION['admin']);
+        unset($_SESSION['id']);
+        
+        if ($_SESSION) {
+            echo 0;
+        }
+        else{
+            echo 1;
+        }
     }
 }
