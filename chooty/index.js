@@ -7,6 +7,7 @@ let PASSWORD;
 
 var menu;
 var cart = [];
+var cost = 0;
 
 function setList(user=false) {
     $.ajax({
@@ -39,11 +40,14 @@ function printMenu(data, dove, user=false) {
     } else if (dove == "cart") {
         var ul = document.getElementById("ilCarello");
         document.getElementById("badge").innerHTML=data.length;
+        document.getElementById("cost").innerHTML= "Costo totale EUR: "+cost;
         if(data.length != 0){
             document.getElementById("submit-order").classList.remove("disabled");
+            document.getElementById("cart1").classList.add("pulse");
         }
         else{
             document.getElementById("submit-order").classList.add("disabled");
+            document.getElementById("cart1").classList.remove("pulse");
         }
         ul.innerHTML = "";
     } else {
@@ -73,7 +77,7 @@ function printMenu(data, dove, user=false) {
             a.addEventListener('click', function (e) {
                 addCart(data[i][0]);
             })
-            a.classList.add("secondary-content","btn-floating" , "right");
+            a.classList.add("secondary-content","btn-floating", "red", "darken-4", "right");
             I.classList.add("material-icons");
         } else if (dove == "delMenu") {
             var a = document.createElement("a");
@@ -102,7 +106,7 @@ function printMenu(data, dove, user=false) {
 
         var spanText = document.createTextNode(data[i][1]);
         var pText = document.createTextNode(data[i][2]);
-        var pText2 = document.createTextNode(data[i][3]);
+        var pText2 = document.createTextNode(data[i][3] + " Euro");
 
         span.appendChild(spanText);
         p.appendChild(pText);
@@ -125,6 +129,8 @@ function addCart(id){
         return element[0] == id
     });
 
+    cost += parseInt(select[0][3]);
+    
     cart = [...cart, ...select];
 
     CartToDB(select);
@@ -149,18 +155,21 @@ function delFood(id){
     });
 }
 
-function removeFood(id) {
-    console.log(cart);
+function removeFood(id) {   
+    cost = 0;
     cart = cart.filter((element) => {
         return element[0] != id
     });
-    console.log(cart);
+
+    cart.map((ele) => {
+        cost += parseInt(ele[3]);  
+    });
     
     RemFromDB(id);
     printMenu(cart, "cart");
 }
 
-function CartToDB(cart){
+function CartToDB(cart){    
     $.ajax({
         method: "GET",
         url: "food.php",
@@ -170,7 +179,6 @@ function CartToDB(cart){
         },
     }).done(function (data) {
         data = JSON.parse(data);
-        console.log(data);
     });
 }
 
@@ -184,6 +192,18 @@ function RemFromDB(id){
         },
     }).done(function (data) {
         console.log(data);
+    });
+}
+
+function printFromDB(){
+    $.ajax({
+        method: "GET",
+        url: "food.php",
+        data: {
+            req: "cart",
+        },
+    }).done(function (data) {
+        printMenu(JSON.parse(data), "cart");
     });
 }
 
@@ -285,7 +305,12 @@ document.getElementById("submit-regis").addEventListener('click', function(e){
             PASSWORD,
         },
         success:function(data){
-            console.log(data);
+            if (data == 0) {
+                alert("OK");
+            }
+            else{
+                location.reload();
+            }
         }
     })
     
