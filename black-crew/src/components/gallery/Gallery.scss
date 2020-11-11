@@ -1,0 +1,30 @@
+.img {
+    margin: 1% auto;
+    padding: 1%;
+
+    @media (min-width: 1024px) {
+        img {
+            width: 20vw !important;
+            height: 15vw !important;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+        img {
+            width: 30vw !important;
+        }
+
+    }
+
+    @media (max-width: 425px) {
+        img {
+            width: 80vw !important;
+        }
+    }
+
+    &:hover {
+        transition: all 1s ease-in-out;
+        transform: scale(1.1);
+        z-index: 1000;
+    }
+}
