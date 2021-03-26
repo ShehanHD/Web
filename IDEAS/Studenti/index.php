@@ -19,6 +19,13 @@ if (isset($_GET["newName"])) {
     header("Location: /studenti/");
 }
 
+if (isset($_GET["deleteId"])) {
+    $query = $pdo->prepare("DELETE FROM Studenti WHERE IdStudente = :id;");
+    $query->execute(['id' => $_GET["deleteId"]]);
+
+    header("Location: /studenti/");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -73,8 +80,13 @@ if (isset($_GET["newName"])) {
         button {
             height: 20px;
             color: white;
-            background-color: #a21818;
+            background-color: #1f2c46;
             width: 100%;
+        }
+
+        #delete {
+            height: 50px;
+            background-color: #a21818;
         }
     </style>
 </head>
@@ -109,7 +121,7 @@ if (isset($_GET["newName"])) {
             echo "<td>" . $value["Sesso"] . "</td>";
             echo "<td>" . $value["MediaVoti"] . "</td>";
             echo "<td><input type='text' id='newName'><button onclick='editStudent(" . $value["IdStudente"] . ")'>Submit</button></td>";
-            echo "<td><button onclick='deleteStudent(" . $value["IdStudente"] . ")'>Submit</button></td>";
+            echo "<td><button id='delete' onclick='deleteStudent(" . $value["IdStudente"] . ")'>Delete</button></td>";
             echo "</tr>";
         }
         ?>
