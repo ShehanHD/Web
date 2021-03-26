@@ -1,0 +1,78 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+  font-size: $font-md;
+
+  @include breakpoint-up(large) {
+    font-size: $font-lg;
+  }
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+  color: $cyan;
+}
+
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+// Flexbox
+.flex {
+  display: flex;
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-se {
+    justify-content: space-evenly;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+
+  &-fd-col {
+    flex-direction: column;
+  }
+
+  &-fd-row {
+    flex-direction: row;
+  }
+
+  &-wrap {
+    flex-wrap: wrap;
+  }
+}
+
+.hide-for-mobile {
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-for-pc {
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}

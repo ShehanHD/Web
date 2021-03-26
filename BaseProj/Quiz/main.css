@@ -25,6 +25,40 @@ body{
     overflow: hidden;
 }
 
+.ok{
+    animation: true 1s ease-in-out;
+}
+
+.no{
+    animation: false 1s ease-in-out;
+}
+
+@keyframes true {
+    0%{
+        box-shadow: 0 0 8px 2px rgb(0, 255, 0);
+    }
+    50%{
+        box-shadow: 0 0 5px 1px rgb(0, 255, 0);
+    }
+    100%{
+        box-shadow: 0 0 6px 2px rgb(0, 255, 0);
+    }
+}
+
+@keyframes false {
+    0% {
+        box-shadow: 0 0 8px 2px rgb(255, 0, 0);
+    }
+
+    50% {
+        box-shadow: 0 0 5px 1px rgb(255, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 6px 2px rgb(255, 0, 0);
+    }
+}
+
 .quiz-container ul{
     text-decoration: none;
     list-style-type: none;
@@ -57,4 +91,39 @@ body{
 
 .submit:focus{
     outline: none;
+}
+
+.footer{
+    width: 100%;
+    height: 5vh;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    box-shadow: 1px 1px 7px 1px;
+}
+
+.answers{
+    background: linear-gradient(to right bottom, rgba(255, 255, 46, 0.644), rgb(255, 255, 0));
+    width: 100%;
+    height: 100%;
+}
+
+.correct{
+    background: linear-gradient(to right bottom, rgba(46, 255, 46, 0.644), rgb(0, 255, 0));
+    width: 100%;
+    height: 100%;
+}
+
+.wrong{
+    background: linear-gradient(to right bottom, rgba(252, 46, 46, 0.644), rgb(255, 0, 0));
+    width: 100%;
+    height: 100%;
+}
+
+.footer h3 {
+    margin: 1vh 0 0 0;
 }

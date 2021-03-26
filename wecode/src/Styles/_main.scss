@@ -1,0 +1,45 @@
+.main {
+    margin-top: 2px;
+
+    @include breakpoint-up(large) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &-img {
+        @include breakpoint-up(large) {
+            flex: 2;
+            order: 2;
+            min-height: 31rem;
+        }
+
+        background-image: url("../Media/main.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 100%;
+        min-height: 17.5rem;
+    }
+
+    &-text {
+        text-align: center;
+
+        @include breakpoint-up(large) {
+            flex: 1;
+            order: 1;
+        }
+
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: larger;
+            line-height: 1;
+            font-weight: 500;
+        }
+
+        p {
+            font-size: $font-sm;
+            line-height: 1.2;
+        }
+    }
+}

@@ -1,0 +1,161 @@
+.header {
+    padding: 0;
+
+    nav {
+        padding: 0 1.5rem;
+    }
+
+    &-logo {
+
+        img {
+            width: 50px;
+        }
+
+        &-title {
+            color: $lightBlue !important;
+            margin: 15px;
+            margin-left: 5px;
+            padding: 0;
+        }
+
+    }
+
+    &-menu {
+        >span {
+            display: block;
+            width: 26px;
+            height: 4px;
+            background-color: $pastelBlue;
+            transition: all 500ms ease-in-out;
+            transform-origin: 2px 2px;
+
+            &:not(:last-child) {
+                margin-bottom: 4px;
+            }
+        }
+
+        &.open {
+            >span:first-child {
+                transform: rotate(45deg);
+            }
+
+            >span:nth-child(2) {
+                opacity: 0;
+            }
+
+            >span:last-child {
+                transform: rotate(-45deg);
+            }
+        }
+
+        &.close {
+            >span:first-child {
+                transform: rotate(0deg);
+            }
+
+            >span:nth-child(2) {
+                opacity: 1;
+            }
+
+            >span:last-child {
+                transform: rotate(0deg);
+            }
+        }
+    }
+
+    &-links {
+
+        a {
+            font-size: $font-sm;
+            padding: 1.7125rem 1.5rem;
+            position: relative;
+
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+
+            &::before {
+                position: absolute;
+                z-index: 100;
+                background: none repeat scroll 0 0 transparent !important;
+                bottom: 0;
+                content: "";
+                display: block;
+                height: 3px;
+                left: 0;
+                background: $lightBlue !important;
+                width: 0;
+                transition: width 0.3s ease 0s,
+                    left 0.3s ease 0s;
+            }
+
+            &:hover {
+                color: $pastelBlue;
+
+                &::before {
+                    width: 100%;
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+.mobile-menu {
+    visibility: hidden;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to right bottom, rgba(20, 40, 80, 0.932), rgba(20, 40, 80, 0.63));
+    backdrop-filter: blur(1rem);
+    overflow: hidden;
+    padding-top: 3vh;
+
+    a {
+        text-align: center;
+        width: 100vw;
+        padding: 2rem 0;
+        color: $white;
+
+        &:hover {
+            background: linear-gradient(to right bottom, rgba(0, 168, 204, 0.932), rgba(0, 167, 204, 0.63));
+            color: $darkBlue;
+        }
+    }
+
+    &::before {
+        z-index: 1;
+        position: absolute;
+        content: "";
+        background: linear-gradient(to right bottom, rgba(0, 168, 204, 0.932), rgba(0, 167, 204, 0.63));
+        height: 70vh;
+        width: 70vh;
+        border-radius: 100%;
+        right: -20vh;
+        bottom: -35vh;
+    }
+
+    &::after {
+        z-index: 1;
+        position: absolute;
+        content: "";
+        background: linear-gradient(to right bottom, rgba(0, 168, 204, 0.932), rgba(0, 168, 204, 0.048));
+        height: 60vh;
+        width: 60vh;
+        border-radius: 100%;
+        left: -20vh;
+        bottom: -35vh;
+    }
+
+    &-links {
+        height: 50vh;
+    }
+
+    &.open {
+        animation: fade-in 500ms forwards;
+    }
+
+    &.close {
+        animation: fade-out 500ms forwards;
+    }
+}
